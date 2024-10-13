@@ -10,9 +10,9 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class SolverTest {
+class PackerTest {
 
-    private Solver solver;
+    private Packer packer;
 
     @BeforeEach
     public void setUp() {
@@ -21,14 +21,14 @@ class SolverTest {
         InputParser parser = new InputParser();
         ResultFormatter formatter = new ResultFormatter();
 
-        solver = new Solver(strategy, parser, formatter);
+        packer = new Packer(strategy, parser, formatter);
     }
 
     @Test
     void testPackFromFile() {
         // Read the input file from resources
         String filePath = "src/test/resources/example_input";
-        String result = solver.pack(filePath);
+        String result = packer.pack(filePath);
 
         // Expected result based on the input data
         String expectedResult = """
@@ -44,16 +44,16 @@ class SolverTest {
 
     @Test
     void testPackWithNullFilePath() {
-        assertThrows(APIException.class, () -> solver.pack(null));
+        assertThrows(APIException.class, () -> packer.pack(null));
     }
 
     @Test
     void testPackWithEmptyFilePath() {
-        assertThrows(APIException.class, () -> solver.pack(""));
+        assertThrows(APIException.class, () -> packer.pack(""));
     }
 
     @Test
     void testPackWithNonExistentFile() {
-        assertThrows(APIException.class, () -> solver.pack("non_existent_file.txt"));
+        assertThrows(APIException.class, () -> packer.pack("non_existent_file.txt"));
     }
 }

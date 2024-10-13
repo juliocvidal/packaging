@@ -2,7 +2,7 @@ package com.mobiquity.packer;
 
 import com.mobiquity.packer.algorithm.BacktrackingSolver;
 import com.mobiquity.packer.parser.InputParser;
-import com.mobiquity.packer.solver.Solver;
+import com.mobiquity.packer.solver.Packer;
 import com.mobiquity.packer.util.ResultFormatter;
 
 public class Main {
@@ -15,13 +15,13 @@ public class Main {
         String filePath = args[0];
 
         try {
-            Solver solver = new Solver(
+            Packer packer = new Packer(
                     new BacktrackingSolver(),
                     new InputParser(),
                     new ResultFormatter()
             );
 
-            String result = solver.pack(filePath);
+            String result = packer.pack(filePath);
             System.out.println(result);
 
         } catch (Exception e) {

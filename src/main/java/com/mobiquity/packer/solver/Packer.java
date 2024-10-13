@@ -12,13 +12,13 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Objects;
 
-public class Solver {
+public class Packer {
 
     private final SolverStrategy strategy;
     private final InputParser inputParser;
     private final ResultFormatter resultFormatter;
 
-    public Solver(SolverStrategy strategy, InputParser inputParser, ResultFormatter resultFormatter) {
+    public Packer(SolverStrategy strategy, InputParser inputParser, ResultFormatter resultFormatter) {
         this.strategy = strategy;
         this.inputParser = inputParser;
         this.resultFormatter = resultFormatter;
