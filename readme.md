@@ -1,3 +1,6 @@
+# Documentation
+Please see the [ADR](docs/ADR.md) for the architectural decisions made during the development of this project.
+
 # Delivery
 Important: The assigment must be completed by pushing your code into master.
 
